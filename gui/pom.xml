@@ -12,13 +12,7 @@
     <artifactId>gui</artifactId>
     <version>1.0</version>
     
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-    </properties>
-    <dependencies>
+        <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -42,7 +36,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/../../mods</outputDirectory>
+                            <outputDirectory>${project.build.directory}/../../mods/${project.artifactId}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -52,7 +46,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.2</version>                
                 <configuration>
-                    <outputDirectory>${project.build.directory}/../../mods</outputDirectory>
+                    <outputDirectory>${project.build.directory}/../../mods/${project.artifactId}</outputDirectory>
                     <archive>
                         <manifest>
                             <mainClass>net.clementlevallois.javafxtest.gui.App</mainClass>
@@ -63,21 +57,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>15</source>
-                    <target>15</target>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <id>compile</id>
-                    </execution>
-                </executions>
-            </plugin>
-            
+            </plugin>            
         </plugins>
     </build>
 </project>

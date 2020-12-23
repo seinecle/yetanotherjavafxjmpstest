@@ -6,8 +6,20 @@
         <artifactId>parent</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>logic</artifactId>
+    <artifactId>pluginB</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>net.clementlevallois.javafxtest</groupId>
+            <artifactId>logic</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -20,7 +32,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/../../mods/${project.artifactId}</outputDirectory>
+                            <outputDirectory>${project.build.directory}/../../mods/plugins/${project.artifactId}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -30,7 +42,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.2</version>                
                 <configuration>
-                    <outputDirectory>${project.build.directory}/../../mods/${project.artifactId}</outputDirectory>                    
+                    <outputDirectory>${project.build.directory}/../../mods/plugins/${project.artifactId}</outputDirectory>
                     <archive>
                         <manifest>
                             <!--<mainClass>net.clementlevallois.javafxtest.yetanotherjavafxjpmstest.App</mainClass>-->
@@ -43,5 +55,5 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>    
 </project>

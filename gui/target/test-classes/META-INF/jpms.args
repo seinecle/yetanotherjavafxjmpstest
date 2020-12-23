@@ -1,0 +1,4 @@
+--patch-module
+net.clementlevallois.javafxtest.gui=_
+--add-reads
+net.clementlevallois.javafxtest.gui=ALL-UNNAMED
